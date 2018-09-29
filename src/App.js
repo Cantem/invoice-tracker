@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Form from "./components/Form";
+import InvoiceList from "./components/InvoiceList";
 
 class App extends Component {
   constructor(props) {
@@ -8,15 +10,50 @@ class App extends Component {
     this.state = {
       invoices: {}
     };
+
+    this.saveToStorage = this.saveToStorage.bind(this);
   }
+
+  componentDidMount() {
+    localStorage.getItem("invoices")
+      ? this.setState({
+          invoices: JSON.parse(localStorage.getItem("invoices"))
+        })
+      : localStorage.setItem(
+          "invoices",
+          JSON.stringify(this.props.mockCustomerData)
+        ),
+      this.setState({
+        invoices: JSON.parse(localStorage.getItem("invoices"))
+      });
+  }
+
+  saveToStorage(event, invoiceToAdd) {
+    event.preventDefault();
+
+    this.setState(prevState => {
+      const newId = Object.keys(prevState.invoices).length + 1;
+      return {
+        invoices: {
+          ...prevState.invoices,
+          [newId]: { ...invoiceToAdd, id: newId }
+        }
+      };
+    }, localStorage.setItem("invoices", JSON.stringify(this.state.invoices)));
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to InvoiceIT</h1>
         </header>
-        <Form initialState={this.props.initialState} />
+        <Form
+          initialState={this.props.initialState}
+          saveToStorage={this.saveToStorage}
+        />
+        <InvoiceList invoices={this.state.invoices} />
       </div>
     );
   }

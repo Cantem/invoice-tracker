@@ -19,7 +19,10 @@ export default class Form extends Component {
 
   render() {
     return (
-      <form onChange={this.handleChange(event)}>
+      <form
+        onChange={event => this.handleChange(event)}
+        onSubmit={event => this.props.saveToStorage(event, this.state)}
+      >
         <div>
           <label>Due Date</label>
           <input name="dueDate" type="text" defaultValue={this.state.dueDate} />
