@@ -12,6 +12,7 @@ class App extends Component {
     };
 
     this.saveToStorage = this.saveToStorage.bind(this);
+    this.markAsPaid = this.markAsPaid.bind(this);
   }
 
   componentDidMount() {
@@ -42,6 +43,21 @@ class App extends Component {
     }, localStorage.setItem("invoices", JSON.stringify(this.state.invoices)));
   }
 
+  markAsPaid(id) {
+    const result = Object.assign({}, this.state.invoices[id]);
+
+    result.isPaid = new Date().toString();
+
+    this.setState(prevState => {
+      return {
+        invoices: {
+          ...prevState.invoices,
+          [id]: { ...result }
+        }
+      };
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -53,7 +69,10 @@ class App extends Component {
           initialState={this.props.initialState}
           saveToStorage={this.saveToStorage}
         />
-        <InvoiceList invoices={this.state.invoices} />
+        <InvoiceList
+          invoices={this.state.invoices}
+          markAsPaid={this.markAsPaid}
+        />
       </div>
     );
   }

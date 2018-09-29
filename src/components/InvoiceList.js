@@ -12,7 +12,7 @@ export default class InvoiceList extends Component {
             <div>{invoice.dueDate}</div>
             <div>{invoice.description}</div>
             <div>{invoice.isPaid}</div>
-            <button onclick={() => this.markAsPaid(id)}> Mark as paid</button>
+            <button onClick={() => this.markAsPaid(id)}>Mark as paid</button>
           </div>
         ))}
       </div>
