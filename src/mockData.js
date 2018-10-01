@@ -13,7 +13,7 @@ export const mockCustomerData = {
     invoiceValue: "25.27",
     customer: "Andres",
     description: "White shelf",
-    isPaid: "19-09-2018"
+    isPaid: "Sat Sep 29 2018 16:37:47 GMT+0100 (British Summer Time)"
   },
   "3": {
     id: "3",

@@ -45,7 +45,6 @@ class App extends Component {
 
   markAsPaid(id) {
     const result = Object.assign({}, this.state.invoices[id]);
-
     result.isPaid = new Date().toString();
 
     this.setState(prevState => {
