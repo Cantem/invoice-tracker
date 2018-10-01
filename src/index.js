@@ -6,10 +6,10 @@ import App from "./App";
 import { mockCustomerData } from "./mockData";
 
 const initialState = {
-  dueDate: "today",
-  invoiceValue: "100000.00",
-  customer: "Apple",
-  description: "loads of services",
+  dueDate: "",
+  invoiceValue: "",
+  customer: "",
+  description: "",
   isPaid: ""
 };
 
