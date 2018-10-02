@@ -18,14 +18,14 @@ class App extends Component {
   componentDidMount() {
     localStorage.getItem("invoices")
       ? this.setState({
-          invoices: JSON.parse(localStorage.getItem("invoices"))
+          invoices: JSON.parse(localStorage.getItem("invoices")) //componentDidMount checks if data from invoices (state) needs to be loaded
         })
       : localStorage.setItem(
           "invoices",
-          JSON.stringify(this.props.mockCustomerData)
+          JSON.stringify(this.props.mockCustomerData) //local storage only supports strings as values
         ),
       this.setState({
-        invoices: JSON.parse(localStorage.getItem("invoices"))
+        invoices: JSON.parse(localStorage.getItem("invoices")) //using parse() to convert data back to object
       });
   }
 
@@ -33,18 +33,18 @@ class App extends Component {
     event.preventDefault();
 
     this.setState(prevState => {
-      const newId = Object.keys(prevState.invoices).length + 1;
+      const newId = Object.keys(prevState.invoices).length + 1; //using the length of the object to generate new Id
       return {
         invoices: {
           ...prevState.invoices,
           [newId]: { ...invoiceToAdd, id: newId }
         }
       };
-    }, localStorage.setItem("invoices", JSON.stringify(this.state.invoices)));
+    }, localStorage.setItem("invoices", JSON.stringify(this.state.invoices))); //on submit adding new object(invoice) to the local storage
   }
 
   markAsPaid(id) {
-    const result = Object.assign({}, this.state.invoices[id]);
+    const result = Object.assign({}, this.state.invoices[id]); //assigning isPaid key  to current date to mark it as paid (needed for sorting)
     result.isPaid = new Date().toLocaleDateString("en-GB");
 
     this.setState(prevState => {

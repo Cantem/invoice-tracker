@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5",
+    "react-scripts": "^2.0.3",
     "react-test-renderer": "^16.5.2"
   },
   "scripts": {
@@ -13,9 +13,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "./src/setupTests.js"
   },
   "devDependencies": {
     "enzyme": "^3.6.0",

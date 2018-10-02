@@ -3,6 +3,7 @@ import React, { Component } from "react";
 export default class InvoiceList extends Component {
   render() {
     const sorted = Object.values(this.props.invoices).sort(function(a, b) {
+      //sorting the object (invoices) by paid status - paid on top of the list
       return (
         (a.isPaid === null) - (b.isPaid === null) ||
         -(a.isPaid > b.isPaid) ||

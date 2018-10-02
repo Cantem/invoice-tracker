@@ -6,11 +6,11 @@ import App from "./App";
 import { mockCustomerData } from "./mockData";
 
 const initialState = {
-  dueDate: "",
-  invoiceValue: "",
-  customer: "",
-  description: "",
-  isPaid: ""
+  dueDate: "30/10/2019",
+  invoiceValue: "300",
+  customer: "Constructor Labs",
+  description: "Projector",
+  isPaid: null
 };
 
 ReactDOM.render(

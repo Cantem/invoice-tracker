@@ -7,7 +7,7 @@ export default class Form extends Component {
       ...this.props.initialState
     };
 
-    this.invoiceValue = React.createRef();
+    this.invoiceValue = React.createRef(); //using refrence as per recent Dan's Abramov suggestions
     this.dueDate = React.createRef();
     this.customer = React.createRef();
     this.description = React.createRef();
@@ -16,6 +16,7 @@ export default class Form extends Component {
   }
   handelChange(event) {
     this.setState(preveState => ({
+      //capturing changes to all values being input into the form
       ...preveState,
       invoiceValue: this.invoiceValue.current.value,
       dueDate: this.dueDate.current.value,
