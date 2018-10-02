@@ -62,7 +62,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">InvoiceIT</h1>
+          <h1 className="App-title">
+            Invoice
+            <span>TRACKER</span>
+          </h1>
         </header>
         <Form
           initialState={this.props.initialState}

@@ -1,4 +1,8 @@
 .App {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
   text-align: center;
 }
 
@@ -15,6 +19,11 @@
 
 .App-title {
   font-size: 1.5em;
+  margin: 0 0 1rem 0;
+}
+
+.App-title span {
+  color: rgb(15, 29, 186);
 }
 
 .App-intro {

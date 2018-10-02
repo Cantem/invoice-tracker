@@ -11,13 +11,31 @@ export default class InvoiceList extends Component {
     });
 
     return sorted.map(invoice => (
-      <div key={invoice.id}>
-        <div>{invoice.id}</div>
-        <div>{invoice.customer}</div>
-        <div>{invoice.invoiceValue}</div>
-        <div>{invoice.dueDate}</div>
-        <div>{invoice.description}</div>
-        <div>{invoice.isPaid}</div>
+      <div className="container" key={invoice.id}>
+        <div>
+          <p> Invoice no.</p>
+          {invoice.id}
+          /2018
+        </div>
+        <div>
+          <p>Customer:</p>
+          {invoice.customer}
+        </div>
+        <div>
+          <p>Value:</p>£{invoice.invoiceValue}
+        </div>
+        <div>
+          <p>Payable by:</p>
+          {invoice.dueDate}
+        </div>
+        <div>
+          <p>Description:</p>
+          {invoice.description}
+        </div>
+        <div>
+          <p>Paid on:</p>
+          {invoice.isPaid}
+        </div>
         <button onClick={() => this.props.markAsPaid(invoice.id)}>
           Mark as paid
         </button>

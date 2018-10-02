@@ -1,5 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  background: #4b709d;
+  line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1em;
+}
+
+/*FORM*/
+
+.invoice-container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.invoice-container-image {
+  display: none;
+}
+
+.wrapper {
+  box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+}
+
+.wrapper > * {
+  padding: 1em;
+}
+
+.invoice {
+  background: #c9e6ff;
+}
+
+.invoice h3 {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+/* FORM STYLES */
+
+.invoice-structure form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.invoice-structure form label {
+  display: block;
+  text-align: left;
+}
+
+.invoice-structure form p {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+}
+
+.invoice-structure form .full {
+  grid-column: 1 / 3;
+}
+
+.invoice-structure form input {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #c9e6ff;
+  border-radius: 4px;
+  box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+}
+
+.invoice-structure form button {
+  width: 60%;
+  padding: 1em;
+
+  margin-bottom: 2.5em;
+  margin-top: 2em;
+
+  background: #c9e6ff;
+  border: 1px solid #c9e6ff;
+  border-radius: 4px;
+  box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.invoice-structure form button:hover,
+.invoice-structure form button:focus {
+  background: #92bde7;
+  color: #fff;
+  outline: 0;
+  transition: background-color 2s ease-out;
+}
+
+/* INVOICE LIST*/
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+
+  background: #92bde7;
+  max-width: 1170px;
+  margin-bottom: 10px;
+
+  padding: 1em;
+
+  box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+  background: #ffffff;
+}
+
+.container button {
+  width: 40%;
+  padding: 1em;
+
+  margin-bottom: 2.5em;
+  margin-top: 2em;
+
+  background: #c9e6ff;
+  border: 1px solid #c9e6ff;
+  border-radius: 4px;
+  box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+
+  text-transform: uppercase;
+  cursor: pointer;
+
+  grid-column: 1 / 2;
+}
+
+.container button:hover,
+.container button:focus {
+  background: #92bde7;
+  color: #fff;
+  outline: 0;
+  transition: background-color 2s ease-out;
+}
+
+.container p {
+  font-weight: bold;
+}
+
+/* LARGE SCREENS */
+
+@media (min-width: 768px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .wrapper > * {
+    padding: 2em;
+  }
+
+  .invoice-structure h3 {
+    text-align: left;
+  }
+
+  .invoice-container-image {
+    display: grid;
+  }
+
+  .container button {
+    width: 20%;
+  }
 }
