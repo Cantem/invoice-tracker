@@ -1,8 +1,8 @@
-#Invoice tracker
+# Invoice tracker
 
 The application allows users to input invoice information which is available in the form of the list with paid invoices sorted and displayed at the top of the list. User can mark an invoice as paid and it is immediately available at the top of the list.
 
-##Prerequistes
+## Prerequistes
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
