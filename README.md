@@ -12,6 +12,10 @@ You can find the most recent version of this guide [here](https://github.com/fac
 After cloning this repository simply run `npm start`. It runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
+## Technologies
+
+React, CSS grid, Responsive Mobile First Design, also used localStorage to store and save data across the session in the browser.
+
 ## Table of Contents
 
 - [Updating to New Releases](#updating-to-new-releases)
