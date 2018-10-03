@@ -13,6 +13,17 @@ class App extends Component {
 
     this.saveToStorage = this.saveToStorage.bind(this);
     this.markAsPaid = this.markAsPaid.bind(this);
+    this.SaveToLocalStorageAndState = this.SaveToLocalStorageAndState.bind(
+      this
+    );
+  }
+
+  SaveToLocalStorageAndState(data) {
+    localStorage.setItem("invoices", JSON.stringify(data)); //local storage only supports strings as values
+
+    this.setState({
+      invoices: data
+    });
   }
 
   componentDidMount() {
@@ -20,13 +31,7 @@ class App extends Component {
       ? this.setState({
           invoices: JSON.parse(localStorage.getItem("invoices")) //componentDidMount checks if data from invoices (state) needs to be loaded
         })
-      : localStorage.setItem(
-          "invoices",
-          JSON.stringify(this.props.mockCustomerData) //local storage only supports strings as values
-        );
-    this.setState({
-      invoices: JSON.parse(localStorage.getItem("invoices")) //using parse() to convert data back to object
-    });
+      : this.SaveToLocalStorageAndState(this.props.mockCustomerData);
   }
 
   saveToStorage(event, invoiceToAdd) {

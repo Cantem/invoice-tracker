@@ -67,7 +67,7 @@ export default class Form extends Component {
                   defaultValue={this.state.customer}
                 />
               </p>
-              <p class="description">
+              <p className="description">
                 <label>Description</label>
                 <input
                   className="form-field"
