@@ -16,17 +16,20 @@ class App extends Component {
   }
 
   componentDidMount() {
-    localStorage.getItem("invoices")
-      ? this.setState({
-          invoices: JSON.parse(localStorage.getItem("invoices")) //componentDidMount checks if data from invoices (state) needs to be loaded
-        })
-      : localStorage.setItem(
-          "invoices",
-          JSON.stringify(this.props.mockCustomerData) //local storage only supports strings as values
-        ),
+    if (localStorage.getItem("invoices")) {
+      return this.setState({
+        invoices: JSON.parse(localStorage.getItem("invoices")) //componentDidMount checks if data from invoices (state) needs to be loaded
+      });
+    } else if (
+      localStorage.setItem(
+        "invoices",
+        JSON.stringify(this.props.mockCustomerData) //local storage only supports strings as values
+      )
+    ) {
       this.setState({
         invoices: JSON.parse(localStorage.getItem("invoices")) //using parse() to convert data back to object
       });
+    }
   }
 
   saveToStorage(event, invoiceToAdd) {
