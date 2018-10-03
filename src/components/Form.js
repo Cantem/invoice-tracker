@@ -37,7 +37,7 @@ export default class Form extends Component {
               onChange={event => this.handelChange(event)}
               onSubmit={event => this.props.saveToStorage(event, this.state)}
             >
-              <p>
+              <p className="due">
                 <label>Due date</label>
                 <input
                   className="form-field"
@@ -47,7 +47,7 @@ export default class Form extends Component {
                   defaultValue={this.state.dueDate}
                 />
               </p>
-              <p>
+              <p className="value">
                 <label>Invoice value</label>
                 <input
                   className="form-field"
@@ -57,7 +57,7 @@ export default class Form extends Component {
                   defaultValue={this.state.invoiceValue}
                 />
               </p>
-              <p>
+              <p className="customer">
                 <label>Customer</label>
                 <input
                   className="form-field"
@@ -67,7 +67,7 @@ export default class Form extends Component {
                   defaultValue={this.state.customer}
                 />
               </p>
-              <p>
+              <p class="description">
                 <label>Description</label>
                 <input
                   className="form-field"
