@@ -16,12 +16,6 @@ Open http://localhost:3000 to view it in the browser.
 
 React, CSS grid, Responsive Mobile First Design, also used localStorage to store and save data across the session in the browser.
 
-## Unresolved issued
-
-I have tried mocking the `localStorag` in order to test my components with `Jest` and `Enzyme`, due to lack of time I was unable to make these test work properly. I have created `localStorageMock` with `jest.fn()` to `getItem`, `setItem` and `clear` `localStorage`. 
-
-It was my first time using `create react app` and setting up jest.config turned out to be problematic, but I have managed to set up testing tools with help of `creat react app` and `Enzyme` documentation. I had to `configure` `new Adapter` in each test file in order for `Jest` to run the tests, which wasn't initially obvious - `new Adapter` has been configured only in the `SetupTests.js` which wasn't sufficient in case of this app.
-
 ## Table of Contents
 
 - [Updating to New Releases](#updating-to-new-releases)
