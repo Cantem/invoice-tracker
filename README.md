@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-After cloning this repository simply run `npm start`. It runs the app in the development mode.
+After cloning this repository install all dependencies by running `npm install` and then hit `npm start`. It runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
 ## Technologies
